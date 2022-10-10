@@ -1,2 +1,4 @@
-java -version
-uname -a
+#!/bin/bash
+_test_func(){ 
+ echo 'test'
+}
