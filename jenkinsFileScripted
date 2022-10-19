@@ -5,7 +5,7 @@ node('built-in'){
     }  
     
   stage('git branch'){
-      echo 'git_branch' 
+      echo git_branch 
    }
   
   stage('Branch-ul main') {
