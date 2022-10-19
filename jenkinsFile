@@ -6,6 +6,14 @@ pipeline {
     agent any
 
     stages {
+        stage('checkup'){
+            when {
+                branch 'main'
+            }
+            steps{
+                sh "echo ${env.BRANCH_NAME} este branchul"
+            }
+        }
         
         stage('Hello') {
             steps {
