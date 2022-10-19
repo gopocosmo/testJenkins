@@ -7,11 +7,19 @@ node('built-in'){
     sh "echo ${env.WORKSPACE}"
   }
   
+  stage('JAVA') {
+    sh 'java --version'
+  }
+  
   stage('Execute script')
   {
     sh 'ls' 
     sh 'chmod +x HelloWorld.sh'
     sh './HelloWorld.sh'
+  }
+  
+  stage('ORICINE ORICE'){
+    sh 'pwd'
   }
   
   stage('Clean up')
