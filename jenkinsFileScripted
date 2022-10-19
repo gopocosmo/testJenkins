@@ -5,15 +5,15 @@ node('built-in'){
     }  
     
   stage('Branch-ul main') {
-        if (env.BRANCH_NAME == 'main') {
+        if (env.BRANCH_NAME == "main") {
             echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
         } else {
-            sh 'echo branchul este ${env.BRANCH_NAME}'
+            sh "echo branchul este ${env.BRANCH_NAME}"
         }
     }  
     
   stage('git branch'){
-      sh 'echo asta este ???????? ${env.BRANCH_NAME}' 
+      sh "echo asta este ???????? ${env.BRANCH_NAME}"
    }
  
   
