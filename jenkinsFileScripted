@@ -1,8 +1,8 @@
 node('built-in'){
+  
   stage('clone from repository'){
      checkout scm
     }    
-  }
   
   stage('Branch-ul main') {
         if (env.BRANCH_NAME == 'main') {
