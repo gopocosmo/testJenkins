@@ -2,10 +2,14 @@ node('built-in'){
   
   stage('clone from repository'){
      checkout scm
-    }    
+    }  
+    
+  stage('git branch'){
+      echo 'git_branch' 
+   }
   
   stage('Branch-ul main') {
-        if (GIT_BRANCH == 'main') {
+        if (env.GIT_BRANCH == 'main') {
             echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
         } else {
             echo 'EROARE NU ESTI PE BRANCHUL BUN'
