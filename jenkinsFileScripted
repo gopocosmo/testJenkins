@@ -9,7 +9,7 @@ node('built-in'){
    }
   
   stage('Branch-ul main') {
-        if (${env.BRANCH_NAME} == 'main') {
+        if (env.BRANCH_NAME == '*/main') {
             echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
         } else {
             echo 'EROARE NU ESTI PE BRANCHUL BUN'
