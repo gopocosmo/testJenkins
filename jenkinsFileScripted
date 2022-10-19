@@ -1,15 +1,16 @@
 node('built-in'){
-stages{
   stage('clone from repository'){
-    when { 
-      anyOf { 
-        branch 'main'; branch 'slave' 
-        }
-          }
-    steps{
-      checkout scm
+     checkout scm
     }    
   }
+  
+  stage('Branch-ul main') {
+        if (env.BRANCH_NAME == 'main') {
+            echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
+        } else {
+            echo 'EROARE NU ESTI PE BRANCHUL BUN'
+        }
+    }
   
   stage('Show env vars') {
     sh "echo ${env.WORKSPACE}"
@@ -35,4 +36,3 @@ stages{
     cleanWs deleteDirs: true
   }
  }
-}
