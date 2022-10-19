@@ -1,7 +1,7 @@
 node('built-in'){
   stage('clone from repository'){
     when { anyOf { 
-      branch 'master'; branch 'staging' } }
+      branch 'main'; branch 'slave' } }
         checkout scm
   }
   
