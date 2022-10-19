@@ -4,17 +4,18 @@ node('built-in'){
      checkout scm
     }  
     
-  stage('git branch'){
-      echo 'git_branch' 
-   }
-  
   stage('Branch-ul main') {
-        if (env.BRANCH_NAME == '*/main') {
+        if (env.BRANCH_NAME == 'main') {
             echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
         } else {
-            echo 'EROARE NU ESTI PE BRANCHUL BUN'
+            sh 'echo branchul este ${env.BRANCH_NAME}'
         }
-    }
+    }  
+    
+  stage('git branch'){
+      sh 'echo asta este ???????? ${env.BRANCH_NAME}' 
+   }
+ 
   
   stage('Show env vars') {
     sh "echo ${env.WORKSPACE}"
