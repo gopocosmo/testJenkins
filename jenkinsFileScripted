@@ -2,21 +2,20 @@ node('built-in'){
   
   stage('clone from repository'){
      checkout scm
-    }  
+    }
+    
+  stage('git branch'){
+      sh "echo ${env.BRANCH_NAME} este branchul pe care lucram "
+   }
     
   stage('Branch-ul main') {
         if (env.BRANCH_NAME == "main") {
             echo 'EXECUTAM DOAR PE BRANCHUL MAIN'
         } else {
-            sh "echo branchul este ${env.BRANCH_NAME}"
+            sh "echo branchul NU este MAIN ci este ${env.BRANCH_NAME}"
         }
     }  
-    
-  stage('git branch'){
-      sh "echo asta este ???????? ${env.BRANCH_NAME}"
-   }
- 
-  
+   
   stage('Show env vars') {
     sh "echo ${env.WORKSPACE}"
   }
