@@ -1,8 +1,13 @@
 node('built-in'){
   stage('clone from repository'){
-    when { anyOf { 
-      branch 'main'; branch 'slave' } }
-        checkout scm
+    when { 
+      anyOf { 
+        branch 'main'; branch 'slave' 
+        }
+          }
+    steps{
+      checkout scm
+    }    
   }
   
   stage('Show env vars') {
