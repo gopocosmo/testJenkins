@@ -20,6 +20,7 @@ pipeline {
                 echo 'Hello World'
                 sh 'echo ${testArg}'
                 sh 'echo "Added from snippet generator"'
+                sh "echo ${env.BRANCH_NAME} este branchul"
             }
         }
         
