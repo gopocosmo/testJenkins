@@ -1,4 +1,5 @@
 node('built-in'){
+stages{
   stage('clone from repository'){
     when { 
       anyOf { 
@@ -33,4 +34,5 @@ node('built-in'){
   {
     cleanWs deleteDirs: true
   }
+ }
 }
